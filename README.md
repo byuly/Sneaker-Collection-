@@ -11,3 +11,4 @@ User Stories:
 - As a user, I want to be able to have separate lists for WANT and OWNED.
 - As a user, I want to be able to remove a sneaker from my sneaker list.
 - As a user, I want to be able to see information on price, size, date, brand, style, colorway, and owned status.
+- As a user, I want to be able to set certain sneakers as "favorite".
