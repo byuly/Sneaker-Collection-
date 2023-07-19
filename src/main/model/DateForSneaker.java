@@ -19,6 +19,6 @@ public class DateForSneaker {
         this.year = year;
         this.month = month;
         this.day = day;
-}
+    }
 
 }
