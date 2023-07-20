@@ -169,7 +169,7 @@ public class SneakerCollectionApp {
         System.out.println("\tc -> edit color");
         System.out.println("\ts -> edit size");
         System.out.println("\tp -> edit price");
-        System.out.println("\tb -> back to menu" );
+        System.out.println("\tb -> back to menu");
         String answer = input.next();
         if (answer.equals("n")) {
             editName(editing);
