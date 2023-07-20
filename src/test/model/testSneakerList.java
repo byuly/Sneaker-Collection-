@@ -93,5 +93,13 @@ public class testSneakerList {
         assertEquals(names, testSneakerList.listOfNames());
     }
 
+    @Test
+    void testGetOneSneaker() {
+        testSneakerList.addSneaker(s1);
+        ArrayList<String> testList = new ArrayList<String>();
+        testList.add("Nike");
+        assertEquals(s1, testSneakerList.getOneSneaker(testList));
+    }
+
 
 }

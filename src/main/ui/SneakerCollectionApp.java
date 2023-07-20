@@ -158,7 +158,7 @@ public class SneakerCollectionApp {
         }
     }
 
-    // EFFECTS: display menu for editing sneaker, and gets input to execute.
+    // EFFECTS: display menu for editing sneaker.
     private void editSneaker(ArrayList<String> editing) {
         System.out.println("\nSelect from:");
         System.out.println("\tn -> edit name");
@@ -166,7 +166,12 @@ public class SneakerCollectionApp {
         System.out.println("\tc -> edit color");
         System.out.println("\ts -> edit size");
         System.out.println("\tp -> edit price");
+        System.out.println("\tr -> remove item");
         System.out.println("\tb -> back to menu");
+        editSneakerCommands(editing);
+    }
+
+    private void editSneakerCommands(ArrayList<String> editing) {
         String answer = input.next();
         if (answer.equals("n")) {
             editName(editing);
@@ -178,6 +183,8 @@ public class SneakerCollectionApp {
             editSize(editing);
         } else if (answer.equals("p")) {
             editPrice(editing);
+        } else if (answer.equals("r")) {
+            editRemove(editing);
         } else if (answer.equals("b")) {
             System.out.println("going back!");
         } else {
@@ -190,6 +197,13 @@ public class SneakerCollectionApp {
         Sneaker beingEdited = sneakers.getOneSneaker(editing);
         System.out.println("enter name -->");
         beingEdited.setName(input.next());
+    }
+
+    //EFFECTS: removes the sneaker searched.
+    private void editRemove(ArrayList<String> editing) {
+        Sneaker beingEdited = sneakers.getOneSneaker(editing);
+        sneakers.removeSneaker(beingEdited);
+        System.out.println("Successfully removed!");
     }
 
     //EFFECTS: edits the own status of sneaker searched.
