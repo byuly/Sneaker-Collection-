@@ -101,7 +101,7 @@ public class testSneakerList {
         assertEquals(s1, testSneakerList.getOneSneaker(testList));
     }
     @Test
-    void testGetOneSneakernull() {
+    void testGetOneSneakerNull() {
         testSneakerList.addSneaker(s1);
         ArrayList<String> testList = new ArrayList<String>();
         testList.add("hey");
