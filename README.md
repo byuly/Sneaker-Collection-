@@ -6,9 +6,10 @@ that the user owns/wants to own. Mainly for sneaker lovers.
 
 User Stories:
 - As a user, I want to be able to add a sneaker to my sneaker list. !
-- As a user, I want to be able to view the list of sneakers in my sneaker list. 
+- As a user, I want to be able to view the list of sneakers in my sneaker list. !
 - As a user, I want to be able to mark a sneaker as owned in my sneaker collection. !
 - As a user, I want to be able to have separate lists for WANT and OWNED. !
-- As a user, I want to be able to remove a sneaker from my sneaker list.
+- As a user, I want to be able to remove a sneaker from my sneaker list.!
+- As a user, I want to be able to edit sneakers in the list. !
 - As a user, I want to be able to see information on price, size, date, brand, style, colorway, and owned status.
 - As a user, I want to be able to set certain sneakers as "favorite".
