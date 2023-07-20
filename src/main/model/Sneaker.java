@@ -32,6 +32,9 @@ public class Sneaker {
         return this.date;
     }
 
+    // EFFECTS: sets owned status.
+    public void setOwned(Boolean isOwned) { this.boughtYet = isOwned; }
+
     // MODIFIES: this
     // EFFECTS: sets the size for the shoe.
     public void setSize(double size) {

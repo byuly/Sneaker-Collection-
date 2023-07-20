@@ -92,4 +92,20 @@ public class testSneakerList {
         assertEquals(s1list, testSneakerList.getSneakerSearch("Nike"));
     }
 
+    @Test
+    void testNamesSneaker() {
+        testSneakerList.addSneaker(s1);
+        testSneakerList.addSneaker(s2);
+        testSneakerList.addSneaker(s3);
+        s4 = new Sneaker(100.00, 9.5, "Nike Jordan 700s", "black");
+        testSneakerList.addSneaker(s4);
+        ArrayList<String> names = new ArrayList<>();
+        names.add(s1.getName());
+        names.add(s2.getName());
+        names.add(s3.getName());
+        names.add(s4.getName());
+        assertEquals(names, testSneakerList.listOfNames());
+    }
+
+
 }

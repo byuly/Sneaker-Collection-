@@ -73,12 +73,24 @@ public class SneakerList {
     // EFFECTS: produces a list of sneakers that are searched by name.
     public ArrayList<Sneaker> getSneakerSearch(String s) {
         ArrayList<Sneaker> listSneakerSearch = new ArrayList<>();
-        for (Sneaker sneaker : sneakers) {
+        for (Sneaker sneaker : this.sneakers) {
             if (sneaker.getName().contains(s)) {
                 listSneakerSearch.add(sneaker);
             }
         }
         return listSneakerSearch;
+    }
+
+
+    //EFFECTS: return arraylist of names of shoes.
+    public ArrayList<String> listOfNames() {
+        ArrayList<String> names = new ArrayList<>();
+
+        for (Sneaker sneaker : this.sneakers) {
+            names.add(sneaker.getName());
+        }
+
+        return names;
     }
 
 }
