@@ -50,7 +50,6 @@ public class testSneakerList {
         testSneakerList.addSneaker(s1);
         testSneakerList.addSneaker(s2);
         testSneakerList.addSneaker(s3);
-        testSneakerList.refreshCollections();
         assertEquals(1, testSneakerList.getSneakerOwnList().size());
         assertEquals(2, testSneakerList.getSneakerWantList().size());
         testSneakerList.removeSneaker(s1);
@@ -70,7 +69,6 @@ public class testSneakerList {
         testSneakerList.addSneaker(s1);
         testSneakerList.addSneaker(s2);
         testSneakerList.addSneaker(s3);
-        testSneakerList.refreshCollections();
         testSneakerList.clearSneakerList();
         assertEquals(0, testSneakerList.getSneakerList().size());
         assertEquals(0, testSneakerList.getSneakerOwnList().size());
@@ -82,12 +80,11 @@ public class testSneakerList {
         testSneakerList.addSneaker(s1);
         testSneakerList.addSneaker(s2);
         testSneakerList.addSneaker(s3);
-        testSneakerList.refreshCollections();
-        ArrayList<Sneaker> s1list = new ArrayList<>();
-        s1list.add(s1);
+        ArrayList<String> s1list = new ArrayList<>();
+        s1list.add(s1.getName());
         assertEquals(s1list, testSneakerList.getSneakerSearch("Nike"));
         s4 = new Sneaker(100.00, 9.5, "Nike Jordan 700s", "black");
-        s1list.add(s4);
+        s1list.add(s4.getName());
         testSneakerList.addSneaker(s4);
         assertEquals(s1list, testSneakerList.getSneakerSearch("Nike"));
     }

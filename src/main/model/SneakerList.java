@@ -1,40 +1,60 @@
 package model;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 public class SneakerList {
     private ArrayList<Sneaker> sneakers;
-    private ArrayList<Sneaker> sneakerWant;
-    private ArrayList<Sneaker> sneakerOwn;
+    private ArrayList<Sneaker> sneakersWant;
+    private ArrayList<Sneaker> sneakersOwn;
 
     public SneakerList() {
         this.sneakers = new ArrayList<>();
-        this.sneakerWant = new ArrayList<>();
-        this.sneakerOwn = new ArrayList<>();
+        this.sneakersWant = new ArrayList<>();
+        this.sneakersOwn = new ArrayList<>();
 
     }
 
-    // EFFECTS: returns universal sneaker list.
-    public ArrayList<Sneaker> getSneakerList() {
-        return sneakers;
+    // EFFECTS: returns universal sneaker list with name.
+    public ArrayList<String> getSneakerList() {
+        ArrayList<String> printedList = new ArrayList<>();
+        for (Sneaker sneaker: sneakers) {
+            printedList.add(sneaker.getName());
+        }
+        return printedList;
     }
 
-    // EFFECTS: returns "wanted" sneaker list.
-    public ArrayList<Sneaker> getSneakerWantList() {
-        return sneakerWant;
+
+    // EFFECTS: returns "wanted" sneaker list by name.
+    public ArrayList<String> getSneakerWantList() {
+        ArrayList<String> printedList = new ArrayList<>();
+        for (Sneaker sneaker: sneakersWant) {
+            printedList.add(sneaker.getName());
+        }
+        return printedList;
     }
 
     // EFFECTS: returns "owned" sneaker list.
-    public ArrayList<Sneaker> getSneakerOwnList() {
-        return sneakerOwn;
+    public ArrayList<String> getSneakerOwnList() {
+        ArrayList<String> printedList = new ArrayList<>();
+        for (Sneaker sneaker: sneakersOwn) {
+            printedList.add(sneaker.getName());
+        }
+        return printedList;
     }
+
 
     // MODIFIES: this
     // EFFECTS: adds sneaker to universal sneaker list.
     public void addSneaker(Sneaker sneaker) {
         sneakers.add(sneaker);
+        if (sneaker.isBoughtYet()) {
+            this.sneakersOwn.add(sneaker);
+        } else {
+            this.sneakersWant.add(sneaker);
+        }
     }
+
 
     // MODIFIES: this
     // EFFECTS: removes sneaker from all lists.
@@ -42,11 +62,11 @@ public class SneakerList {
         if (sneakers.contains(sneaker)) {
             sneakers.remove(sneaker);
         }
-        if (sneakerWant.contains(sneaker)) {
-            sneakerWant.remove(sneaker);
+        if (sneakersWant.contains(sneaker)) {
+            sneakersWant.remove(sneaker);
         }
-        if (sneakerOwn.contains(sneaker)) {
-            sneakerOwn.remove(sneaker);
+        if (sneakersOwn.contains(sneaker)) {
+            sneakersOwn.remove(sneaker);
         }
     }
 
@@ -54,31 +74,46 @@ public class SneakerList {
     // EFFECTS: clears all the lists.
     public void clearSneakerList() {
         sneakers.clear();
-        sneakerWant.clear();
-        sneakerOwn.clear();
+        sneakersWant.clear();
+        sneakersOwn.clear();
     }
 
-    // MODIFIES: this
+  /*  // MODIFIES: this
     // EFFECTS: refreshes all lists so any new sneakers added will be allocated to appropriate lists.
     public void refreshCollections() {
         for (Sneaker sneaker : sneakers) {
             if (sneaker.isBoughtYet()) {
-                this.sneakerOwn.add(sneaker);
+                this.sneakersOwn.add(sneaker);
             } else {
-                this.sneakerWant.add(sneaker);
+                this.sneakersWant.add(sneaker);
             }
         }
-    }
+    }*/
 
-    // EFFECTS: produces a list of sneakers that are searched by name.
-    public ArrayList<Sneaker> getSneakerSearch(String s) {
+    // EFFECTS: produces a list of sneakers names that are searched by name.
+    public ArrayList<String> getSneakerSearch(String s) {
         ArrayList<Sneaker> listSneakerSearch = new ArrayList<>();
         for (Sneaker sneaker : this.sneakers) {
             if (sneaker.getName().contains(s)) {
                 listSneakerSearch.add(sneaker);
             }
         }
-        return listSneakerSearch;
+        ArrayList<String> printedList = new ArrayList<>();
+        for (Sneaker sneaker: listSneakerSearch) {
+            printedList.add(sneaker.getName());
+        }
+        return printedList;
+    }
+
+    // REQUIRES: list is one element long.
+    // EFFECTS: returns the sneaker model with name.
+    public Sneaker getOneSneaker(ArrayList<String> oneLong) {
+        for (Sneaker sneaker: this.sneakers) {
+            if (sneaker.getName().contains(oneLong.get(0))) {
+                return sneaker;
+            }
+        }
+        return null;
     }
 
 

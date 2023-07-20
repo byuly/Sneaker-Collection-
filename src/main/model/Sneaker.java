@@ -27,13 +27,27 @@ public class Sneaker {
         this.date = dateForm.dateToString();
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets the name of sneaker.
+    public void setName(String s) {
+        this.name = s;
+    }
+
+    // MODIFIES: this
+    // EFFECTS: sets the price of sneaker.
+    public void setPrice(Double n) {
+        this.price = n;
+    }
+
     // EFFECTS: returns the date for sneaker.
     public String getDate() {
         return this.date;
     }
 
     // EFFECTS: sets owned status.
-    public void setOwned(Boolean isOwned) { this.boughtYet = isOwned; }
+    public void setOwned(Boolean isOwned) {
+        this.boughtYet = isOwned;
+    }
 
     // MODIFIES: this
     // EFFECTS: sets the size for the shoe.
