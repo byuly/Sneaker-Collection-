@@ -171,6 +171,7 @@ public class SneakerCollectionApp {
         editSneakerCommands(editing);
     }
 
+    // EFFECTS: execute user input for editing sneaker.
     private void editSneakerCommands(ArrayList<String> editing) {
         String answer = input.next();
         if (answer.equals("n")) {
@@ -199,7 +200,7 @@ public class SneakerCollectionApp {
         beingEdited.setName(input.next());
     }
 
-    //EFFECTS: removes the sneaker  searched.
+    //EFFECTS: removes the sneaker searched.
     private void editRemove(ArrayList<String> editing) {
         Sneaker beingEdited = sneakers.getOneSneaker(editing);
         sneakers.removeSneaker(beingEdited);
