@@ -128,20 +128,17 @@ public class SneakerCollectionApp {
     }
 
     // EFFECTS: prints the wanted sneakers list to the user.
-    // PARTIALLY COMPLETE.
     private void doViewWants() {
         System.out.println(sneakers.getSneakerWantList());
     }
 
 
     // EFFECTS: prints the owned sneakers list to the user.
-    // PARTIALLY COMPLETE.
     private void doViewOwned() {
         System.out.println(sneakers.getSneakerOwnList());
     }
 
     // EFFECTS: prints the all sneakers list to the user.
-    // PARTIALLY COMPLETE.
     private void doViewAll() {
         System.out.println(sneakers.getSneakerList());
     }

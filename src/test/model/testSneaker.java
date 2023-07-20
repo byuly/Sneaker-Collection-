@@ -3,7 +3,6 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,10 +28,29 @@ public class testSneaker {
     }
 
     @Test
-    void testSetSize(){
+    void testSetSize() {
         testSneaker.setSize(6.0);
         assertEquals(6.0, testSneaker.getSize());
     }
+
+    @Test
+    void testSetName() {
+        testSneaker.setName("adidas");
+        assertEquals("adidas", testSneaker.getName());
+    }
+
+    @Test
+    void testSetPrice() {
+        testSneaker.setPrice(100.00);
+        assertEquals(100.00, testSneaker.getPrice());
+    }
+
+    @Test
+    void testSetOwn() {
+        testSneaker.setOwned(true);
+        assertTrue(testSneaker.isBoughtYet());
+    }
+
 
     @Test
     void testSetColorWay() {
