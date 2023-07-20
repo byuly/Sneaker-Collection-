@@ -13,25 +13,14 @@ public class testSneakerList {
     private Sneaker s2;
     private Sneaker s3;
     private Sneaker s4;
-    private DateForSneaker d1;
-    private DateForSneaker d2;
 
 
     @BeforeEach
     void runBefore() {
         s1 = new Sneaker(99.99, 9.5, "Nike Jordan 1s", "Yellow");
-        d1 = new DateForSneaker();
-        d1.setDate(2005, 5, 15);
-        s1.setDateSneaker(d1);
         s2 = new Sneaker(200.00, 9.5, "Adidas Superstars", "White");
-        d2 = new DateForSneaker();
-        d2.setDate(2013, 6, 18);
-        s2.setDateSneaker(d2);
         s3 = new Sneaker(10.00, 9.0, "New Balance 550", "Grey");
-        d2 = new DateForSneaker();
-        d2.setDate(2013, 6, 18);
         s3.boughtWanted();
-        s3.setDateSneaker(d2);
         testSneakerList = new SneakerList();
 
     }

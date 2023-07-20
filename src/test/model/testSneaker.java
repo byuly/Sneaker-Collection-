@@ -8,14 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class testSneaker {
     private Sneaker testSneaker;
-    private DateForSneaker date;
+
 
     @BeforeEach
     void runBefore() {
         testSneaker = new Sneaker(99.99, 9.5, "Nike", "Yellow");
-        date = new DateForSneaker();
-        date.setDate(2005, 5, 15);
-        testSneaker.setDateSneaker(date);
     }
 
     @Test
@@ -24,7 +21,6 @@ public class testSneaker {
         assertEquals(9.5, testSneaker.getSize());
         assertEquals("Nike", testSneaker.getName());
         assertEquals("Yellow", testSneaker.getColorway());
-        assertEquals("2005/5/15", testSneaker.getDate());
     }
 
     @Test

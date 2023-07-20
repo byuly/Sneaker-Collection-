@@ -4,7 +4,6 @@ package model;
 public class Sneaker {
     private double price;
     private double size;
-    private DateForSneaker dateForm;
     private String date;
     private String name;
     private Boolean boughtYet;
@@ -15,17 +14,11 @@ public class Sneaker {
     public Sneaker(double price, double size, String name, String colorway) {
         this.price = price;
         this.size = size;
-        this.date = "";
         this.name = name;
         this.colorway = colorway;
         this.boughtYet = false;
     }
 
-    // MODIFIES: this
-    // EFFECTS: sets the date for sneaker.
-    public void setDateSneaker(DateForSneaker dateForm) {
-        this.date = dateForm.dateToString();
-    }
 
     // MODIFIES: this
     // EFFECTS: sets the name of sneaker.
@@ -39,10 +32,6 @@ public class Sneaker {
         this.price = n;
     }
 
-    // EFFECTS: returns the date for sneaker.
-    public String getDate() {
-        return this.date;
-    }
 
     // EFFECTS: sets owned status.
     public void setOwned(Boolean isOwned) {
