@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class testSneaker {
     private Sneaker testSneaker;
@@ -17,7 +16,7 @@ public class testSneaker {
         testSneaker = new Sneaker(99.99, 9.5, "Nike", "Yellow");
         date = new DateForSneaker();
         date.setDate(2005, 5, 15);
-        testSneaker.setDate(date);
+        testSneaker.setDateSneaker(date);
     }
 
     @Test
@@ -27,6 +26,26 @@ public class testSneaker {
         assertEquals("Nike", testSneaker.getName());
         assertEquals("Yellow", testSneaker.getColorway());
         assertEquals("2005/5/15", testSneaker.getDate());
+    }
+
+    @Test
+    void testSetSize(){
+        testSneaker.setSize(6.0);
+        assertEquals(6.0, testSneaker.getSize());
+    }
+
+    @Test
+    void testSetColorWay() {
+        testSneaker.setColorway("Blue");
+        assertEquals("Blue", testSneaker.getColorway());
+    }
+
+    @Test
+    void testBoughtStatus() {
+        testSneaker.boughtWanted();
+        assertTrue(testSneaker.isBoughtYet());
+        testSneaker.soldOwned();
+        assertFalse(testSneaker.isBoughtYet());
     }
 
     @Test

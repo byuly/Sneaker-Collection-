@@ -4,79 +4,93 @@ package model;
 public class Sneaker {
     private double price;
     private double size;
-    private DateForSneaker dateform;
+    private DateForSneaker dateForm;
     private String date;
     private String name;
-    private Boolean boughtyet;
+    private Boolean boughtYet;
     private String colorway;
 
 
-    // EFFECTS: constructs sneaker with given price, size, date and name.
+    // EFFECTS: constructs sneaker with given price, size, date, name, and bought status as false.
     public Sneaker(double price, double size, String name, String colorway) {
         this.price = price;
         this.size = size;
         this.date = "";
         this.name = name;
         this.colorway = colorway;
-        this.boughtyet = false;
+        this.boughtYet = false;
     }
 
-    public void setDate(DateForSneaker dateform) {
-        this.date = dateform.dateToString();
+    // MODIFIES: this
+    // EFFECTS: sets the date for sneaker.
+    public void setDateSneaker(DateForSneaker dateForm) {
+        this.date = dateForm.dateToString();
     }
 
+    // EFFECTS: returns the date for sneaker.
     public String getDate() {
         return this.date;
     }
 
-    //MODIFIES: this
-    //EFFECTS: sets the size for the shoe.
+    // MODIFIES: this
+    // EFFECTS: sets the size for the shoe.
     public void setSize(double size) {
         this.size = size;
     }
 
+    // EFFECTS: returns the size for sneaker.
     public double getSize() {
         return this.size;
     }
 
-    //REQUIRES: price > 0.
-    //MODIFIES: this
-    //EFFECTS: add given price to current price.
+    // REQUIRES: price > 0.
+    // MODIFIES: this
+    // EFFECTS: add given price to current price.
     public void increasePrice(double price) {
         this.price += price;
     }
 
-    //REQUIRES: price > 0.
-    //MODIFIES: this
-    //EFFECTS: subtract given price from current price.
+    // REQUIRES: price > 0.
+    // MODIFIES: this
+    // EFFECTS: subtract given price from current price.
     public void decreasePrice(double price) {
         this.price -= price;
     }
 
+    // EFFECTS: returns the price of sneaker.
     public double getPrice() {
         return this.price;
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets the colorway for the sneaker.
     public void setColorway(String colorway) {
         this.colorway = colorway;
     }
 
+    // EFFECTS: returns the colorway for sneaker.
     public String getColorway() {
         return this.colorway;
     }
 
+    // MODIFIES: this
+    // EFFECTS: Changes the bought status to true.
     public void boughtWanted() {
-        this.boughtyet = true;
+        this.boughtYet = true;
     }
 
+    // MODIFIES: this
+    // EFFECTS: Changes the bought status to false.
     public void soldOwned() {
-        this.boughtyet = false;
+        this.boughtYet = false;
     }
 
+    // EFFECTS: returns the owned status of the sneaker.
     public Boolean isBoughtYet() {
-        return this.boughtyet;
+        return this.boughtYet;
     }
 
+    // EFFECTS: returns the name of the sneaker.
     public String getName() {
         return this.name;
     }
