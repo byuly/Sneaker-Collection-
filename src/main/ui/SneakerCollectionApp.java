@@ -61,6 +61,9 @@ public class SneakerCollectionApp {
             doViewAll();
         } else if (command.equals("search")) {
             doSearch();
+        } else if (command.equals("clear")) {
+            sneakers.clearSneakerList();
+            System.out.println("SUCCESSFULLY CLEARED");
         } else {
             System.out.println("Selection not valid...");
         }
@@ -74,6 +77,7 @@ public class SneakerCollectionApp {
         System.out.println("\to -> view list of owned sneakers");
         System.out.println("\ta -> view all sneakers");
         System.out.println("\tsearch -> search for sneakers");
+        System.out.println("\tclear -> clear all lists");
     }
 
     // MODIFIES: this
