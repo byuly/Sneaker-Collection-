@@ -199,7 +199,7 @@ public class SneakerCollectionApp {
         beingEdited.setName(input.next());
     }
 
-    //EFFECTS: removes the sneaker searched.
+    //EFFECTS: removes the sneaker  searched.
     private void editRemove(ArrayList<String> editing) {
         Sneaker beingEdited = sneakers.getOneSneaker(editing);
         sneakers.removeSneaker(beingEdited);
