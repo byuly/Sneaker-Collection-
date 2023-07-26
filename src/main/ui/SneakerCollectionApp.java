@@ -7,6 +7,7 @@ import persistence.JsonWriter;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -181,6 +182,7 @@ public class SneakerCollectionApp {
     private void editSneaker(ArrayList<String> editing) {
 
         System.out.println("\nSelect from:");
+        System.out.println("\ti -> see information");
         System.out.println("\tn -> edit name");
         System.out.println("\to -> edit owned status");
         System.out.println("\tc -> edit color");
@@ -206,6 +208,8 @@ public class SneakerCollectionApp {
             editPrice(editing);
         } else if (answer.equals("r")) {
             editRemove(editing);
+        } else if (answer.equals("i")) {
+            seeInfo(editing);
         } else if (answer.equals("b")) {
             System.out.println("going back!");
         } else {
@@ -262,10 +266,24 @@ public class SneakerCollectionApp {
         beingEdited.setPrice(input.nextDouble());
     }
 
+    // EFFECTS: displays info of the sneaker.
+    private void seeInfo(ArrayList<String> editing) {
+        Sneaker beingEdited = sneakers.getOneSneaker(editing);
+        System.out.println("name:\t" + beingEdited.getName() + " " +  beingEdited.getColorway());
+        System.out.println("price:\t" + beingEdited.getPrice());
+        System.out.println("size:\t" + beingEdited.getSize());
+        if (beingEdited.isBoughtYet()) {
+            System.out.println("OWNED!");
+        } else {
+            System.out.println("WANTED!");
+        }
+        editSneaker(editing);
+    }
+
+
     // CONSTRUCTED FROM:
     // https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo/blob/master/src/main/ui/WorkRoomApp.java
     // EFFECTS: saves the workroom to file
-
     private void saveSneakers() {
         try {
             jsonWriter.open();
