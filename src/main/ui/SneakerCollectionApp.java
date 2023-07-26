@@ -9,6 +9,7 @@ import java.util.Scanner;
 // The following code is inspired from the TellerApp class in the TellerApp project:
 // https://github.students.cs.ubc.ca/CPSC210/TellerApp/blob/main/src/main/ca/ubc/cpsc210/bank/ui/TellerApp.java
 public class SneakerCollectionApp {
+    private static final String JSON_STORE = "./data/collection.json";
     private Scanner input;
     private SneakerList sneakers;
 

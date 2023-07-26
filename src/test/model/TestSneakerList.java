@@ -65,6 +65,11 @@ public class TestSneakerList {
         assertEquals(2, testSneakerList.getSneakerList().size());
         assertEquals(sneakers1.getSneakers(), testSneakerList.getSneakers());
     }
+    @Test
+    void testRemoveSneakerListNothing() {
+        testSneakerList.removeSneaker(s1);
+        assertEquals(0, testSneakerList.getSneakerList().size());
+    }
 
     @Test
     void testClearSneaker() {
