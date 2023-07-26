@@ -13,6 +13,7 @@ public class SneakerList implements Writable {
     private ArrayList<Sneaker> sneakersWant;
     private ArrayList<Sneaker> sneakersOwn;
 
+    // Constructs
     public SneakerList() {
         this.sneakers = new ArrayList<>();
         this.sneakersWant = new ArrayList<>();

@@ -4,6 +4,7 @@ package model;
 import org.json.JSONObject;
 import persistence.Writable;
 
+// Class that represents a sneaker with info.
 public class Sneaker implements Writable {
     private double price;
     private double size;
@@ -106,7 +107,6 @@ public class Sneaker implements Writable {
 
     // METHOD FROM:
     // https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo/blob/master/src/main/model/Thingy.java
-
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
