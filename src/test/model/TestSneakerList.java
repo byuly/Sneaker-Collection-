@@ -54,6 +54,19 @@ public class TestSneakerList {
     }
 
     @Test
+    void testRemoveSneakerList() {
+        testSneakerList.addSneaker(s1);
+        testSneakerList.addSneaker(s2);
+        testSneakerList.addSneaker(s3);
+        testSneakerList.removeSneaker(s1);
+        SneakerList sneakers1 = new SneakerList();
+        sneakers1.addSneaker(s2);
+        sneakers1.addSneaker(s3);
+        assertEquals(2, testSneakerList.getSneakerList().size());
+        assertEquals(sneakers1.getSneakers(), testSneakerList.getSneakers());
+    }
+
+    @Test
     void testClearSneaker() {
         testSneakerList.addSneaker(s1);
         testSneakerList.addSneaker(s2);
