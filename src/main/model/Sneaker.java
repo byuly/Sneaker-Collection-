@@ -1,7 +1,10 @@
 package model;
 
 
-public class Sneaker {
+import org.json.JSONObject;
+import persistence.Writable;
+
+public class Sneaker implements Writable {
     private double price;
     private double size;
     private String date;
@@ -102,5 +105,15 @@ public class Sneaker {
     }
 
 
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("price", price);
+        json.put("size", size);
+        json.put("name", name);
+        json.put("colorway", colorway);
+        json.put("boughtYet", boughtYet);
+        return json;
+    }
 }
 

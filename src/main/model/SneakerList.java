@@ -1,9 +1,13 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class SneakerList {
+public class SneakerList implements Writable {
     private ArrayList<Sneaker> sneakers;
     private ArrayList<Sneaker> sneakersWant;
     private ArrayList<Sneaker> sneakersOwn;
@@ -13,6 +17,11 @@ public class SneakerList {
         this.sneakersWant = new ArrayList<>();
         this.sneakersOwn = new ArrayList<>();
 
+    }
+
+    // EFFECTS: returns universal sneaker list.
+    public ArrayList<Sneaker> getSneakers() {
+        return sneakers;
     }
 
     // EFFECTS: returns universal sneaker list with name.
@@ -128,4 +137,21 @@ public class SneakerList {
         return names;
     }
 
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("sneakers", sneakersToJson());
+        return json;
+    }
+
+    // EFFECTS: returns things in this workroom as a JSON array
+    private JSONArray sneakersToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Sneaker s : sneakers) {
+            jsonArray.put(s.toJson());
+        }
+
+        return jsonArray;
+    }
 }
