@@ -7,6 +7,7 @@ import persistence.Writable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+// Class contains list of sneakers, owned sneakers, and wanted sneakers.
 public class SneakerList implements Writable {
     private ArrayList<Sneaker> sneakers;
     private ArrayList<Sneaker> sneakersWant;
@@ -137,6 +138,8 @@ public class SneakerList implements Writable {
         return names;
     }
 
+    // NEXT TWO METHODS FROM:
+    // https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo/blob/master/src/main/model/WorkRoom.java
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

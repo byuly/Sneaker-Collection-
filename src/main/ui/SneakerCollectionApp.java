@@ -2,7 +2,11 @@ package ui;
 
 import model.Sneaker;
 import model.SneakerList;
-import java.util.ArrayList;
+import persistence.JsonReader;
+import persistence.JsonWriter;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,9 +16,13 @@ public class SneakerCollectionApp {
     private static final String JSON_STORE = "./data/collection.json";
     private Scanner input;
     private SneakerList sneakers;
+    private JsonWriter jsonWriter;
+    private JsonReader jsonReader;
 
     // EFFECTS: runs the Sneaker Collection application
-    public SneakerCollectionApp() {
+    public SneakerCollectionApp() throws FileNotFoundException {
+        jsonWriter = new JsonWriter(JSON_STORE);
+        jsonReader = new JsonReader(JSON_STORE);
         runSneakers();
     }
 
@@ -65,6 +73,10 @@ public class SneakerCollectionApp {
         } else if (command.equals("clear")) {
             sneakers.clearSneakerList();
             System.out.println("SUCCESSFULLY CLEARED");
+        } else if (command.equals("save")) {
+            saveSneakers();
+        } else if (command.equals("load")) {
+            loadSneakers();
         } else {
             System.out.println("Selection not valid...");
         }
@@ -72,6 +84,8 @@ public class SneakerCollectionApp {
 
     // EFFECTS: displays menu of options to user
     private void displayMenu() {
+        System.out.println("\nsave -> SAVE COLLECTION");
+        System.out.println("\nload -> LOAD SAVED COLLECTION");
         System.out.println("\nSelect from:");
         System.out.println("\ts -> add sneaker");
         System.out.println("\tw -> view list of wanted sneakers");
@@ -165,6 +179,7 @@ public class SneakerCollectionApp {
 
     // EFFECTS: display menu for editing sneaker.
     private void editSneaker(ArrayList<String> editing) {
+
         System.out.println("\nSelect from:");
         System.out.println("\tn -> edit name");
         System.out.println("\to -> edit owned status");
@@ -245,6 +260,35 @@ public class SneakerCollectionApp {
         Sneaker beingEdited = sneakers.getOneSneaker(editing);
         System.out.println("enter size -->");
         beingEdited.setPrice(input.nextDouble());
+    }
+
+    // CONSTRUCTED FROM:
+    // https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo/blob/master/src/main/ui/WorkRoomApp.java
+    // EFFECTS: saves the workroom to file
+
+    private void saveSneakers() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(sneakers);
+            jsonWriter.close();
+            System.out.println("Saved " + "collection" + " to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // CONSTRUCTED FROM:
+    // https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo/blob/master/src/main/ui/WorkRoomApp.java
+    // MODIFIES: this
+    // EFFECTS: loads workroom from file
+
+    private void loadSneakers() {
+        try {
+            sneakers = jsonReader.read();
+            System.out.println("Loaded " + "collection" + " from " + JSON_STORE);
+        } catch (IOException e) {
+            System.out.println("Unable to read from file: " + JSON_STORE);
+        }
     }
 
 

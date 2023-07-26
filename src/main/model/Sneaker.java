@@ -104,6 +104,8 @@ public class Sneaker implements Writable {
         return this.name;
     }
 
+    // METHOD FROM:
+    // https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo/blob/master/src/main/model/Thingy.java
 
     @Override
     public JSONObject toJson() {
