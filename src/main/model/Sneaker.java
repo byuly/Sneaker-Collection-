@@ -107,6 +107,7 @@ public class Sneaker implements Writable {
 
     // METHOD FROM:
     // https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo/blob/master/src/main/model/Thingy.java
+    // EFFECTS: returns sneaker as json file.
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();

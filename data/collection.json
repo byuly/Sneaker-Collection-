@@ -12,5 +12,12 @@
         "name": "juyong",
         "colorway": "yellow",
         "boughtYet": false
+    },
+    {
+        "size": 9,
+        "price": 10,
+        "name": "hey",
+        "colorway": "white",
+        "boughtYet": true
     }
 ]}

@@ -1,13 +1,16 @@
 package ui;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.FileNotFoundException;
+// https://www.guru99.com/java-swing-gui.html
 
 public class Main {
     public static void main(String[] args) {
         try {
-            new SneakerCollectionApp();
+            new Gui();
         } catch (FileNotFoundException e) {
-            System.out.println("Unable to run application: file not found");
+            throw new RuntimeException(e);
         }
     }
 }

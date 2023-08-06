@@ -50,7 +50,7 @@ public class JsonReader {
     }
 
     // MODIFIES: wr
-    // EFFECTS: parses thingies from JSON object and adds them to workroom
+    // EFFECTS: parses sneakers from JSON object and adds them to workroom
     private void addSneakers(SneakerList wr, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("sneakers");
         for (Object json : jsonArray) {

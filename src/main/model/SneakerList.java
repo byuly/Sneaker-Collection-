@@ -89,7 +89,7 @@ public class SneakerList implements Writable {
         sneakersOwn.clear();
     }
 
-  /*  // MODIFIES: this
+    // MODIFIES: this
     // EFFECTS: refreshes all lists so any new sneakers added will be allocated to appropriate lists.
     public void refreshCollections() {
         for (Sneaker sneaker : sneakers) {
@@ -99,7 +99,7 @@ public class SneakerList implements Writable {
                 this.sneakersWant.add(sneaker);
             }
         }
-    }*/
+    }
 
     // EFFECTS: produces a list of sneakers names that are searched by name.
     public ArrayList<String> getSneakerSearch(String s) {
@@ -141,6 +141,8 @@ public class SneakerList implements Writable {
 
     // NEXT TWO METHODS FROM:
     // https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo/blob/master/src/main/model/WorkRoom.java
+
+    // EFFECTS: returns sneakers as a json file
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
