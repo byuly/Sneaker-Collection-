@@ -13,11 +13,7 @@ import persistence.JsonWriter;
 
 public class Gui extends JFrame {
     private static final String JSON_STORE = "./data/collection.json";
-    private static final int WIDTH = 600;
-    private static final int HEIGHT = 600;
     protected SneakerList sneakersGui;
-    private JTextArea displayArea;
-    private JTextField inputField;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
 
@@ -71,7 +67,7 @@ public class Gui extends JFrame {
                             "Do you want to edit this sneaker??", "EDIT SNEAKER",
                             JOptionPane.YES_NO_OPTION);
                     if (result == JOptionPane.YES_OPTION) {
-                        editingFrame(sneakersGui.getOneSneaker(sneakersGui.getSneakerSearch(name)));
+                        new EditingFrame(sneakersGui.getOneSneaker(sneakersGui.getSneakerSearch(name)));
                     } else {
                         JOptionPane.showMessageDialog(Gui.this,
                                 "To edit a sneaker, specify search to one sneaker!");
