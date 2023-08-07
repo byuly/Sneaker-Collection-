@@ -112,6 +112,7 @@ public class EditingFrame extends JFrame {
         add(priceField);
     }
 
+    @SuppressWarnings("methodlength")
     private void editOwnedButton(Sneaker s, SneakerList sb) {
         JButton ownedButton = new JButton("CHANGE OWNED STATUS TO ->");
         ownedField = new JTextField();
