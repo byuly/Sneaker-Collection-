@@ -68,6 +68,7 @@ public class JsonReader {
         Double size = jsonObject.getDouble("size");
         Boolean boughtYet = jsonObject.getBoolean("boughtYet");
         Sneaker sneaker = new Sneaker(price, size, name, colorway);
+        sneaker.setOwned(boughtYet);
         wr.addSneaker(sneaker);
     }
 }

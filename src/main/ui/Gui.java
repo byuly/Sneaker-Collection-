@@ -27,18 +27,19 @@ public class Gui extends JFrame {
     }
 
     private void setGUI() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         setLayout(new GridLayout(0,2));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // buttons for each option
         JButton addButton = new JButton("Add Sneaker");
-        viewWantedSneakersButton();
-        viewOwnedSneakersButton();
-        viewSneakersButton();
-        searchSneakerButton();
-        clearSneakerCollectionButton();
         saveSneakerButton();
         loadSneakerButton();
+        viewWantedSneakersButton();
+        viewOwnedSneakersButton();
+        searchSneakerButton();
+        viewSneakersButton();
+        clearSneakerCollectionButton();
+
 
         add(addButton);
 
@@ -50,9 +51,10 @@ public class Gui extends JFrame {
     }
 
     // EFFECTS: presents search bar and new panel when button is pressed.
+    @SuppressWarnings("methodlength")
     private void searchSneakerButton() {
         JTextField sneakerSearch = new JTextField(10);
-        JButton searchButton = new JButton("Search for Sneakers");
+        JButton searchButton = new JButton("search ->");
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -67,7 +69,10 @@ public class Gui extends JFrame {
                             "Do you want to edit this sneaker??", "EDIT SNEAKER",
                             JOptionPane.YES_NO_OPTION);
                     if (result == JOptionPane.YES_OPTION) {
-                        new EditingFrame(sneakersGui.getOneSneaker(sneakersGui.getSneakerSearch(name)));
+                        new EditingFrame(sneakersGui.getOneSneaker(sneakersGui.getSneakerSearch(name)), sneakersGui);
+                        sneakersGui.refreshCollections();
+                    } else if (result == JOptionPane.NO_OPTION) {
+                        JOptionPane.showMessageDialog(Gui.this, "Going Back to Main Menu!");
                     } else {
                         JOptionPane.showMessageDialog(Gui.this,
                                 "To edit a sneaker, specify search to one sneaker!");
@@ -75,9 +80,12 @@ public class Gui extends JFrame {
                 }
             }
         });
+
         add(searchButton);
         add(sneakerSearch);
     }
+
+    // EFFECTS: When button is pressed, a new Frame appears to add sneaker.
 
     // EFFECTS: saves the collection of sneakers when button is pressed.
     private void saveSneakerButton() {

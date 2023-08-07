@@ -8,7 +8,6 @@ import persistence.Writable;
 public class Sneaker implements Writable {
     private double price;
     private double size;
-    private String date;
     private String name;
     private Boolean boughtYet;
     private String colorway;

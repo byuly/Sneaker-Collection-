@@ -1,23 +1,16 @@
 {"sneakers": [
     {
-        "size": 9,
-        "price": 9,
+        "size": 10,
+        "price": 100,
         "name": "nike",
-        "colorway": "lol",
-        "boughtYet": false
+        "colorway": "yellow",
+        "boughtYet": true
     },
     {
         "size": 9.5,
-        "price": 1.0E9,
-        "name": "juyong",
-        "colorway": "yellow",
+        "price": 9.9,
+        "name": "adidas",
+        "colorway": "brown",
         "boughtYet": false
-    },
-    {
-        "size": 9,
-        "price": 10,
-        "name": "hey",
-        "colorway": "white",
-        "boughtYet": true
     }
 ]}

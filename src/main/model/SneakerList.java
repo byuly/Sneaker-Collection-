@@ -92,6 +92,8 @@ public class SneakerList implements Writable {
     // MODIFIES: this
     // EFFECTS: refreshes all lists so any new sneakers added will be allocated to appropriate lists.
     public void refreshCollections() {
+        sneakersWant.clear();
+        sneakersOwn.clear();
         for (Sneaker sneaker : sneakers) {
             if (sneaker.isBoughtYet()) {
                 this.sneakersOwn.add(sneaker);

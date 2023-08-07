@@ -112,6 +112,17 @@ public class TestSneakerList {
     }
 
     @Test
+    void testRefreshSneaker() {
+        testSneakerList.addSneaker(s1);
+        testSneakerList.addSneaker(s2);
+        testSneakerList.addSneaker(s3);
+        testSneakerList.refreshCollections();
+        assertEquals(1, testSneakerList.getSneakerOwnList().size());
+        assertEquals(2, testSneakerList.getSneakerWantList().size());
+        assertEquals(3, testSneakerList.getSneakerList().size());
+    }
+
+    @Test
     void testGetOneSneaker() {
         testSneakerList.addSneaker(s1);
         ArrayList<String> testList = new ArrayList<String>();
