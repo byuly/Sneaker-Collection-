@@ -39,7 +39,7 @@ public class Gui extends JFrame {
         viewSneakersButton();
         clearSneakerCollectionButton();
         addSneakerButton();
-
+        addImageButton();
 
 
 
@@ -47,6 +47,18 @@ public class Gui extends JFrame {
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+
+    // EFFECTS: When button is pressed, a new Frame appears to image.
+    private void addImageButton() {
+        JButton imageButton = new JButton("press");
+        imageButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new ImageFrame();
+            }
+        });
+        add(imageButton);
     }
 
     // EFFECTS: When button is pressed, a new Frame appears to add sneaker.
