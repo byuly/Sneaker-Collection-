@@ -11,12 +11,15 @@ import model.SneakerList;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
+// class represents the graphical user interface.
+// CITATION: https://www.edureka.co/community/67239/how-to-add-action-listener-that-listens-to-multiple-buttons
 public class Gui extends JFrame {
     private static final String JSON_STORE = "./data/collection.json";
     protected SneakerList sneakersGui;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
 
+    // EFFECTS: constructs gui with title.
     public Gui() throws FileNotFoundException {
         super("Sneaker Collection");
         sneakersGui = new SneakerList();
@@ -26,6 +29,8 @@ public class Gui extends JFrame {
         setGUI();
     }
 
+    // MODIFIES: this
+    // EFFECTS: sets up the gui with the buttons.
     private void setGUI() {
 
         setLayout(new GridLayout(0,2));

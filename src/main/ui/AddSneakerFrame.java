@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// class represents graphical interface for adding a sneaker.
 public class AddSneakerFrame extends JFrame {
     private JTextField nameField;
     private JTextField colorField;
@@ -15,6 +16,7 @@ public class AddSneakerFrame extends JFrame {
     private JTextField sizeField;
     private JTextField priceField;
 
+    // EFFECTS: constructs the frame to add a sneaker.
     public AddSneakerFrame(SneakerList ss) {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLayout(new GridLayout(0, 2));

@@ -10,7 +10,14 @@
         "size": 9,
         "price": 100,
         "name": "Nike Jordan 1's",
-        "colorway": "White",
+        "colorway": "Black",
+        "boughtYet": true
+    },
+    {
+        "size": 9.5,
+        "price": 119.99,
+        "name": "Hey",
+        "colorway": "Brown",
         "boughtYet": true
     }
 ]}

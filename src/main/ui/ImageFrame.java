@@ -3,10 +3,13 @@ package ui;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
+// class represents a frame with a image.
+// PICTURE FROM: https://www.pinterest.ca/pin/1126885137996999174/
 public class ImageFrame extends JFrame {
     private JLabel displayField;
     ImageIcon image;
 
+    // EFFECTS: constructs frame with the given image.
     public ImageFrame() {
         this.setTitle(":)");
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

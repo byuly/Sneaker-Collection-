@@ -1,3 +1,4 @@
+/*
 package ui;
 
 import model.Sneaker;
@@ -315,3 +316,4 @@ public class SneakerCollectionApp {
 
 
 }
+*/

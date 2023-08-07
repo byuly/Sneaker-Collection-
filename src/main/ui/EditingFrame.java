@@ -23,8 +23,8 @@ public class EditingFrame extends JFrame {
         editColorButton(editing);
         editSizeButton(editing);
         editPriceButton(editing);
-        goBackButton();
         removeSneakerButton(editing, sneakersButton);
+        goBackButton();
         this.pack();
         setLocationRelativeTo(null);
         this.setVisible(true);
