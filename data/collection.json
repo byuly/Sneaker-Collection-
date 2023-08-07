@@ -1,16 +1,16 @@
 {"sneakers": [
     {
-        "size": 10,
-        "price": 100,
-        "name": "nike",
-        "colorway": "yellow",
-        "boughtYet": true
+        "size": 2.5,
+        "price": 1,
+        "name": "Adidas",
+        "colorway": "black and white",
+        "boughtYet": false
     },
     {
-        "size": 9.5,
-        "price": 9.9,
-        "name": "adidas",
-        "colorway": "brown",
-        "boughtYet": false
+        "size": 9,
+        "price": 100,
+        "name": "Nike Jordan 1's",
+        "colorway": "White",
+        "boughtYet": true
     }
 ]}

@@ -31,7 +31,6 @@ public class Gui extends JFrame {
         setLayout(new GridLayout(0,2));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // buttons for each option
-        JButton addButton = new JButton("Add Sneaker");
         saveSneakerButton();
         loadSneakerButton();
         viewWantedSneakersButton();
@@ -39,15 +38,27 @@ public class Gui extends JFrame {
         searchSneakerButton();
         viewSneakersButton();
         clearSneakerCollectionButton();
+        addSneakerButton();
 
 
-        add(addButton);
 
 
 
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+
+    // EFFECTS: When button is pressed, a new Frame appears to add sneaker.
+    private void addSneakerButton() {
+        JButton addButton = new JButton("Add Sneaker");
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new AddSneakerFrame(sneakersGui);
+            }
+        });
+        add(addButton);
     }
 
     // EFFECTS: presents search bar and new panel when button is pressed.
@@ -85,7 +96,6 @@ public class Gui extends JFrame {
         add(sneakerSearch);
     }
 
-    // EFFECTS: When button is pressed, a new Frame appears to add sneaker.
 
     // EFFECTS: saves the collection of sneakers when button is pressed.
     private void saveSneakerButton() {

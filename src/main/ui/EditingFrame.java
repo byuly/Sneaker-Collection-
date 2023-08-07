@@ -8,13 +8,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// Class represents the frame for editing a sneaker.
 public class EditingFrame extends JFrame {
 
     private JTextField nameField;
     private JTextField ownedField;
-    private Sneaker editing;
-    private SneakerList sneakersButton;
 
+    // EFFECTS: Constructs the frame for editing a sneaker.
     public EditingFrame(Sneaker editing, SneakerList sneakersButton) {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLayout(new GridLayout(0, 2));
@@ -23,12 +23,31 @@ public class EditingFrame extends JFrame {
         editColorButton(editing);
         editSizeButton(editing);
         editPriceButton(editing);
+        goBackButton();
         removeSneakerButton(editing, sneakersButton);
         this.pack();
         setLocationRelativeTo(null);
         this.setVisible(true);
     }
 
+    // MODIFIES: this
+    // EFFECTS: closes the editing tab, saves changes.
+    private void goBackButton() {
+        JButton goBackButton = new JButton("BACK TO MAIN MENU!");
+        goBackButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                dispose();
+
+
+            }
+        });
+        add(goBackButton);
+    }
+
+    // MODIFIES: SneakerList sb
+    // EFFECTS: removes sneaker when button is pressed.
     private void removeSneakerButton(Sneaker s,SneakerList sb) {
         JButton removeButton = new JButton("REMOVE SNEAKER");
         removeButton.addActionListener(new ActionListener() {
@@ -48,6 +67,8 @@ public class EditingFrame extends JFrame {
         add(removeButton);
     }
 
+    // MODIFIES: Sneaker s
+    // EFFECTS: edits the name on the sneaker when button is pressed.
     private void editNameButton(Sneaker s) {
         JButton nameButton = new JButton("CHANGE NAME TO ->");
         nameField = new JTextField();
@@ -64,6 +85,8 @@ public class EditingFrame extends JFrame {
         add(nameField);
     }
 
+    // MODIFIES: Sneaker s
+    // EFFECTS: edits the color of the sneaker when button is pressed.
     private void editColorButton(Sneaker s) {
         JButton colorButton = new JButton("CHANGE COLORWAY TO ->");
         JTextField colorField = new JTextField();
@@ -80,6 +103,8 @@ public class EditingFrame extends JFrame {
         add(colorField);
     }
 
+    // MODIFIES: Sneaker s.
+    // EFFECTS: edits the size when button is pressed.
     private void editSizeButton(Sneaker s) {
         JButton sizeButton = new JButton("CHANGE SIZE TO ->");
         JTextField sizeField = new JTextField();
@@ -96,6 +121,8 @@ public class EditingFrame extends JFrame {
         add(sizeField);
     }
 
+    // MODIFIES: Sneaker s
+    // EFFECTS: edit price on sneaker.
     private void editPriceButton(Sneaker s) {
         JButton priceButton = new JButton("CHANGE PRICE TO ->");
         JTextField priceField = new JTextField();
@@ -112,6 +139,8 @@ public class EditingFrame extends JFrame {
         add(priceField);
     }
 
+    // MODIFIES: Sneaker s, SneakerList sb
+    // EFFECTS: edit owned status of sneaker, updating both owned and wanted lists of sneakers.
     @SuppressWarnings("methodlength")
     private void editOwnedButton(Sneaker s, SneakerList sb) {
         JButton ownedButton = new JButton("CHANGE OWNED STATUS TO ->");
@@ -140,6 +169,7 @@ public class EditingFrame extends JFrame {
         add(ownedField);
     }
 
+    // EFFECTS: states boughtYet from boolean to a string.
     private void setBoughtText(Sneaker s) {
         if (s.isBoughtYet()) {
             ownedField.setText("owned");
@@ -148,8 +178,10 @@ public class EditingFrame extends JFrame {
         }
     }
 
+    // EFFECTS: prints out message when editing a component is successful.
     private void successfulMessage() {
         JOptionPane.showMessageDialog(EditingFrame.this,
                 "Successfully Edited!");
     }
+
 }
