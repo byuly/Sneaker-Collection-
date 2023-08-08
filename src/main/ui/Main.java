@@ -8,6 +8,7 @@ import java.io.FileNotFoundException;
 // Main class for running application.
 public class Main {
     public static void main(String[] args) {
+        new SplashScreen();
         try {
             new Gui();
         } catch (FileNotFoundException e) {

@@ -22,6 +22,7 @@ list in the search bar, then pressing search. When one sneaker pops up, it will 
 edit the sneaker or not. You can press yes then edit the sneaker from the list. 
 - You can generate a third action related to adding X to Y by pressing view owned sneaker list or view wanted sneaker 
 list. These lists are sorted as sublists of the all sneaker list, separated by if you own the sneaker or not. 
-- You can locate my visual component by pressing the "press" button in the main menu.
+- You can locate my visual component via SplashScreen when started, and
+by pressing the ":)" button in the main menu.
 - You can save the state of my application by clicking the save button in main menu.
 - You can load the previous saved data in my application by pressing the load button in main menu. 

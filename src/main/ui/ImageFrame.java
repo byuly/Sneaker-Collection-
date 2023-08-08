@@ -7,7 +7,7 @@ import javax.swing.*;
 // PICTURE FROM: https://www.pinterest.ca/pin/1126885137996999174/
 public class ImageFrame extends JFrame {
     private JLabel displayField;
-    ImageIcon image;
+    private ImageIcon image;
 
     // EFFECTS: constructs frame with the given image.
     public ImageFrame() {

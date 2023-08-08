@@ -56,7 +56,7 @@ public class Gui extends JFrame {
 
     // EFFECTS: When button is pressed, a new Frame appears to image.
     private void addImageButton() {
-        JButton imageButton = new JButton("press");
+        JButton imageButton = new JButton(":)");
         imageButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
