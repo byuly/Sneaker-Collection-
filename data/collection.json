@@ -19,5 +19,26 @@
         "name": "Hey",
         "colorway": "Brown",
         "boughtYet": true
+    },
+    {
+        "size": 9,
+        "price": 99.99,
+        "name": "Nike ",
+        "colorway": "White",
+        "boughtYet": false
+    },
+    {
+        "size": 9,
+        "price": 119.99,
+        "name": "New Balance 550",
+        "colorway": "Grey",
+        "boughtYet": true
+    },
+    {
+        "size": 10,
+        "price": 10000,
+        "name": "testsneakerlog",
+        "colorway": "white",
+        "boughtYet": false
     }
 ]}

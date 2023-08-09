@@ -4,9 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import model.Event;
+import model.EventLog;
 import model.SneakerList;
 import persistence.JsonReader;
 import persistence.JsonWriter;
@@ -45,10 +49,16 @@ public class Gui extends JFrame {
         clearSneakerCollectionButton();
         addSneakerButton();
         addImageButton();
-
-
-
-
+        // CITATION:
+        // https://examples.javacodegeeks.com/java-development/desktop-java/awt/event/window-closing-event-handling/
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                for (Event next : EventLog.getInstance()) {
+                    System.out.println("-" + next.toString());
+                }
+            }
+        });
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
@@ -92,7 +102,10 @@ public class Gui extends JFrame {
                 } else {
                     JOptionPane.showMessageDialog(Gui.this, sneakersGui.getSneakerSearch(name));
                 }
-                if (1 == sneakersGui.getSneakerSearch(name).size()) {
+                if (1 != sneakersGui.getSneakerSearch(name).size()) {
+                    JOptionPane.showMessageDialog(Gui.this,
+                            "To edit a sneaker, specify search to one sneaker!");
+                } else if (1 == sneakersGui.getSneakerSearch(name).size()) {
                     int result = JOptionPane.showConfirmDialog(null,
                             "Do you want to edit this sneaker??", "EDIT SNEAKER",
                             JOptionPane.YES_NO_OPTION);
@@ -101,9 +114,6 @@ public class Gui extends JFrame {
                         sneakersGui.refreshCollections();
                     } else if (result == JOptionPane.NO_OPTION) {
                         JOptionPane.showMessageDialog(Gui.this, "Going Back to Main Menu!");
-                    } else {
-                        JOptionPane.showMessageDialog(Gui.this,
-                                "To edit a sneaker, specify search to one sneaker!");
                     }
                 }
             }

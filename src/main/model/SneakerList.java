@@ -32,6 +32,7 @@ public class SneakerList implements Writable {
         for (Sneaker sneaker: sneakers) {
             printedList.add(sneaker.getName());
         }
+        EventLog.getInstance().logEvent(new Event("viewed sneaker collection."));
         return printedList;
     }
 
@@ -42,6 +43,7 @@ public class SneakerList implements Writable {
         for (Sneaker sneaker: sneakersWant) {
             printedList.add(sneaker.getName());
         }
+        EventLog.getInstance().logEvent(new Event("viewed wanted sneaker list."));
         return printedList;
     }
 
@@ -51,6 +53,7 @@ public class SneakerList implements Writable {
         for (Sneaker sneaker: sneakersOwn) {
             printedList.add(sneaker.getName());
         }
+        EventLog.getInstance().logEvent(new Event("viewed owned sneaker list."));
         return printedList;
     }
 
@@ -64,6 +67,7 @@ public class SneakerList implements Writable {
         } else {
             this.sneakersWant.add(sneaker);
         }
+        EventLog.getInstance().logEvent(new Event("added sneaker with name: " + sneaker.getName()));
     }
 
 
@@ -79,6 +83,7 @@ public class SneakerList implements Writable {
         if (sneakersOwn.contains(sneaker)) {
             sneakersOwn.remove(sneaker);
         }
+        EventLog.getInstance().logEvent(new Event("removed sneaker with name: " + sneaker.getName()));
     }
 
     // MODIFIES: this
@@ -87,6 +92,7 @@ public class SneakerList implements Writable {
         sneakers.clear();
         sneakersWant.clear();
         sneakersOwn.clear();
+        EventLog.getInstance().logEvent(new Event("cleared collection"));
     }
 
     // MODIFIES: this
@@ -101,6 +107,7 @@ public class SneakerList implements Writable {
                 this.sneakersWant.add(sneaker);
             }
         }
+        EventLog.getInstance().logEvent(new Event("edited a sneaker"));
     }
 
     // EFFECTS: produces a list of sneakers names that are searched by name.
@@ -149,6 +156,7 @@ public class SneakerList implements Writable {
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("sneakers", sneakersToJson());
+        EventLog.getInstance().logEvent(new Event("saved sneaker collection"));
         return json;
     }
 
@@ -159,7 +167,7 @@ public class SneakerList implements Writable {
         for (Sneaker s : sneakers) {
             jsonArray.put(s.toJson());
         }
-
+        EventLog.getInstance().logEvent(new Event("loaded sneaker collection"));
         return jsonArray;
     }
 }

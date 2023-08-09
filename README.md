@@ -26,3 +26,33 @@ list. These lists are sorted as sublists of the all sneaker list, separated by i
 by pressing the ":)" button in the main menu.
 - You can save the state of my application by clicking the save button in main menu.
 - You can load the previous saved data in my application by pressing the load button in main menu. 
+
+PHASE 4: Task 2
+-Tue Aug 08 22:18:45 PDT 2023
+added sneaker with name: Adidas
+-Tue Aug 08 22:18:45 PDT 2023
+added sneaker with name: Nike Jordan 1's
+-Tue Aug 08 22:18:45 PDT 2023
+added sneaker with name: Hey
+-Tue Aug 08 22:18:45 PDT 2023
+added sneaker with name: Nike
+-Tue Aug 08 22:18:45 PDT 2023
+added sneaker with name: New Balance 550
+-Tue Aug 08 22:18:45 PDT 2023
+added sneaker with name: testsneakerlog
+-Tue Aug 08 22:18:47 PDT 2023
+viewed sneaker collection.
+-Tue Aug 08 22:18:55 PDT 2023
+edited a sneaker
+-Tue Aug 08 22:18:57 PDT 2023
+removed sneaker with name: testsneakerlog
+-Tue Aug 08 22:19:18 PDT 2023
+added sneaker with name: testsneakerlog
+-Tue Aug 08 22:19:21 PDT 2023
+loaded sneaker collection
+-Tue Aug 08 22:19:21 PDT 2023
+saved sneaker collection
+-Tue Aug 08 22:19:23 PDT 2023
+viewed sneaker collection.
+-Tue Aug 08 22:19:29 PDT 2023
+cleared collection
