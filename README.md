@@ -56,3 +56,14 @@ saved sneaker collection
 viewed sneaker collection.
 -Tue Aug 08 22:19:29 PDT 2023
 cleared collection
+
+PHASE 4: TASK 3
+
+There were a lot of repetition in my code that could've been improved if I made an abstract class with the methods
+and extended them. I would also research more and see if I can have my "search" more like a real search, going over each
+character. Currently, it can only search words and see if it contains the word. If I had more time, I would definitely 
+make my GUI look nicer, and more user friendly. While I was testing the gui and my application, it felt really 
+inflexible and strict about what I can do to it. I would add exceptions as a way to combat this problem, (for example,
+in the name section, if I put something other than a string, it would just parse it as a string) so that something
+can be done when the input is not the expected type. I would definitely thoroughly add exceptions, making my app more
+robust. 
