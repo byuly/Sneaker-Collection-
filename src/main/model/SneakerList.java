@@ -58,6 +58,7 @@ public class SneakerList implements Writable {
     }
 
 
+
     // MODIFIES: this
     // EFFECTS: adds sneaker to universal sneaker list.
     public void addSneaker(Sneaker sneaker) {
